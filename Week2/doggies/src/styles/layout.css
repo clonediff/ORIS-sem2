@@ -1,0 +1,26 @@
+.header{
+    text-align: center;
+    color: #fff;
+    height: 64px;
+    padding: 50px;
+    line-height: 64px;
+    background-color: #7dbcea;
+}
+
+.content{
+    min-height: 120;
+    background-color: lightgray;
+    padding: 10;
+    margin: 10px 150px 50px;
+}
+
+.layout{
+    height: 100%;
+    background-image: url('../../public/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
