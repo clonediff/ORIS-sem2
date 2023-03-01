@@ -68,11 +68,10 @@ const MainPage = () => {
       // fetch(`https://api.thedogapi.com/v1/breeds?limit=${pageSize}&page=${page}`, requestOptions)
       fetch(`https://localhost:7049/breeds?limit=${pageSize}&page=${page}${parsedFilters && `&${parsedFilters}`}`, requestOptions)
         .then(response => {
-          response.headers.forEach((val, key) => console.log(`${key}: ${val}`))
           setPaginationCount(response.headers.get('pagination-count'))
           return response.json()
         })
-        .then(newData => setBreeds(newData))
+        .then(newData => newData.length !== 0 || page === 0 ? setBreeds(newData) : setPage(0))
   }, [page, pageSize, filters])
 
 
