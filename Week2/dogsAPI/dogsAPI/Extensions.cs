@@ -11,12 +11,12 @@ namespace dogsAPI
 
 			var properties = property.Split('.');
 			return source.Where(item =>
-			{
-				object cur = item;
-				foreach (var curProp in properties)
-					cur = cur.GetType().GetProperty(curProp)?.GetValue(cur)!;
-				return (cur as Interval)!.Intersects(interval);
-			});
+				{
+					object cur = item;
+					foreach (var curProp in properties)
+						cur = cur.GetType().GetProperty(curProp)?.GetValue(cur)!;
+					return (cur as Interval)!.Intersects(interval);
+				});
 		}
 	}
 }

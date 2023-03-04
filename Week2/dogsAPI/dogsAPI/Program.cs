@@ -12,6 +12,7 @@ var app = builder.Build();
 
 app.UseCors(policyBuilder => 
 	policyBuilder.WithOrigins("http://localhost:3000")
+				.AllowAnyHeader()
 				.WithExposedHeaders("pagination-count"));
 
 // Configure the HTTP request pipeline.
