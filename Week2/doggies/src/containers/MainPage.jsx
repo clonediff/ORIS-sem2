@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Row, Pagination, Layout, Collapse } from 'antd';
+import { Col, Row, Pagination, Layout, Collapse, Button } from 'antd';
 
 import DogCard from '../components/DogCard';
 import Sider from "antd/es/layout/Sider";
@@ -90,7 +90,7 @@ const MainPage = () => {
 
       </Header>
       <Layout className="transparent">
-        <Sider className="transparent" style={{marginRight: 16}}>
+        <Sider className="transparent" style={{ marginRight: 16 }}>
           <Collapse  style={{borderRadius: 8, backgroundColor: 'white'}}>
             {filtersInfo.map(filter => 
               <Panel key={filter.key} header={filter.header}>
@@ -98,7 +98,7 @@ const MainPage = () => {
                   saveFiltersState={[saveFilters, setSaveFilters]} filters={updateFilter(filter.key)}/>
               </Panel>)}
           </Collapse>
-          <button onClick={collectFilters}>Применить фильтры</button>
+          <Button type="default" style={{width: "100%", justifyContent: "center"}} onClick={collectFilters}>Применить фильтры</Button>
         </Sider>
         <Layout className="transparent">
           <Content className="transparent">

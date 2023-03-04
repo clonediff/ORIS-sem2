@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import { useEffect, useState } from "react";
 import IntervalSlider from "./IntervalSlider";
 import RadioGroup from "./RadioGroup";
@@ -42,7 +43,7 @@ const Filter = ({ filter, saveFiltersState, filters }) => {
                 enumValues &&
                 <RadioGroup values={enumValues} radioValueState={[radioValue, setRadioValue]}/>
             }
-            <button onClick={resetValues}>Сбросить</button>
+            <Button type="primary" onClick={resetValues}>Сбросить</Button>
         </>
     )
 }

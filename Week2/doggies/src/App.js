@@ -3,6 +3,8 @@ import { Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
 import { Layout } from 'antd';
 import DogInfoPage from './containers/DogInfoPage';
 import MainPage from './containers/MainPage';
+import FeedbackPage from './containers/FeedbackPage';
+import { Footer } from 'antd/es/layout/layout';
 
 const { Header, Content } = Layout;
 const headerStyle = {
@@ -14,7 +16,6 @@ const headerStyle = {
   backgroundColor: '#7dbcea',
 };
 const contentStyle = {
-  minHeight: 120,
   backgroundColor: 'lightgray',
   padding: 10,
   margin: '10px 150px 50px'
@@ -24,7 +25,13 @@ const layoutStyle = {
   backgroundImage: 'url(bg.jpg)',
   backgroundSize: 'cover',
   backgroundAttachment: 'fixed',
-}
+};
+const footerStyle = {
+  backgroundColor: 'lightgray',
+  display: 'grid',
+  gridTemplateColumns: "repeat(1, 1fr)",
+  gap: 10
+};
 function App() {
   return (
     <>
@@ -37,8 +44,12 @@ function App() {
             <Routes>
               <Route path='/' element={<MainPage/>}/>
               <Route path='/:id' element={<DogInfoPage/>}/>
+              <Route path='/feedback' element={<FeedbackPage/>}/>
             </Routes>
           </Content>
+          <Footer style={footerStyle}>
+            <Link to="/feedback" style={{display:'flex', justifyContent: 'center'}}>Оставить отзыв</Link>
+          </Footer>
         </Layout>
       </Router>
     </>
